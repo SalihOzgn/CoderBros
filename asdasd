@@ -1,0 +1,7 @@
+print("""**** 
+Beden Kitle Indeksi
+****""")
+boy = float(input('boy değeri giriniz:'))
+kilo = int(input('kilo değeri giriniz:'))
+beden_kitle_indeksi = kilo / (boy * boy)
+print(beden_kitle_indeksi)
