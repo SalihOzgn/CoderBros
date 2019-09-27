@@ -1,0 +1,7 @@
+print("""
+ad soyad numara ver lan treek
+""")
+ad = str(input('adınızı giriniz:'))
+soyad = str(input('soyadınızı giriniz:'))
+num = int(input('numaranızı giriniz:'))
+print("ad: {}\nsoyad: {}\nnum: {}".format(ad,soyad,num))
