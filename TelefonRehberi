@@ -1,0 +1,43 @@
+import sqlite3
+con = sqlite3.connect("rehber.db")
+cursor = con.cursor()
+
+
+def tablo_olustur():
+    cursor.execute("CREATE TABLE IF NOT EXISTS rehber (isim text,soyisim text,numara text)")
+    con.commit()
+
+
+# def veri_ekle():
+#     cursor.execute("Insert into kitaplik Values ('Furkan Yasin','Ağca','05414779286')")
+#     con.commit()
+
+
+def veri_ekle2(isim, soyisim, numara):
+    cursor.execute("Insert into rehber Values (?,?,?)", (isim, soyisim, numara))
+    con.commit()
+
+
+def verileri_al1():
+    cursor.execute("Select * From rehber")
+    liste = cursor.fetchall()
+    for i in liste:
+        print("Rehberde kayıtlı kişilerin bilgileri...")
+        print(i)
+
+
+def verileri_al2():
+    cursor.execute("Select isim,soyisim From rehber")
+    liste = cursor.fetchall()
+    print("Rehberde bulunanların bilgileri ....")
+    for i in liste:
+        print(i)
+
+
+# isim = input("Adı:")
+# soyisim = input("Soyadı:")
+# numara = input("Numarası:")
+# verileri_al2()
+tablo_olustur()
+# veri_ekle2(isim, soyisim, numara)
+verileri_al1()
